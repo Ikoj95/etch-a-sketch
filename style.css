@@ -1,0 +1,20 @@
+.sketch {
+    width: 960px;
+    margin: auto;
+    display: flex;
+    border: 1px solid black;
+    height: 1000px;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+
+.box{
+    border: 1px solid red;
+    flex: 1;
+}
