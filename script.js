@@ -1,5 +1,6 @@
 const btn = document.querySelector('#btn');
 const sketch = document.querySelector('.sketch');
+const rmv = document.querySelector('#rmv');
 
 
 function addingBoxes() {
@@ -15,3 +16,22 @@ function addingBoxes() {
     }
 }
 btn.addEventListener('click',addingBoxes);
+
+
+
+
+
+
+function removeMe(){
+    
+    sketch.replaceChildren();
+ 
+    /* second option
+    let elementToRemove = document.getElementsByClassName('container');
+    while(elementToRemove.length > 0){
+        elementToRemove[0].parentNode.removeChild(elementToRemove[0]);
+    }
+    */
+}
+
+rmv.addEventListener('click',removeMe)
