@@ -8,6 +8,8 @@
 }
 
 .container {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -15,6 +17,8 @@
 
 
 .box{
+    margin: 0;
+    padding: 0;
     border: 1px solid red;
     flex: 1;
 }
