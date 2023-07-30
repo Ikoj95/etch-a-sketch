@@ -1,15 +1,15 @@
-const btn = document.querySelector('#btn');
+const btnCreate = document.querySelector('#btn');
 const sketch = document.querySelector('.sketch');
-const rmv = document.querySelector('#rmv');
+const btnClear = document.querySelector('#clear');
 let numberOfRows = 0;
 let numberOfColumns = 0;
 
 
 function askQuestion() {
-      while (true) {
+    while (true) {
         numberOfRows = parseInt(prompt('Enter number of rows between 1-100'));
         numberOfColumns = parseInt(prompt('Enter number of columns between 1-100'));
-        if(isNaN(numberOfRows) || isNaN(numberOfColumns)){
+        if (isNaN(numberOfRows) || isNaN(numberOfColumns)) {
             alert('you did not enter number')
             return;
         }
@@ -49,10 +49,34 @@ function addingBoxes() {
         }
         sketch.appendChild(container);
     }
+    changeColor();
 }
 
 
-btn.addEventListener('click', addingBoxes);
+function changeColor() {
+    box = document.querySelectorAll('.box');
+    box.forEach(e => {
+        e.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = `rgb(${rgb()},${rgb()},${rgb()})`;
+        })
+    });
+}
 
+
+function clearMe() {
+    box = document.querySelectorAll('.box');
+    box.forEach(e => {
+        e.style.backgroundColor = '#FFFFFF';
+    })
+}
+
+
+function rgb() {
+    let color = Math.floor(Math.random() * 255);
+    return color;
+}
+
+btnCreate.addEventListener('click', addingBoxes);
+btnClear.addEventListener('click', clearMe);
 
 
