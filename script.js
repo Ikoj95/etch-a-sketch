@@ -3,6 +3,7 @@ const sketch = document.querySelector('.sketch');
 const btnClear = document.querySelector('#clear');
 let numberOfRows = 0;
 let numberOfColumns = 0;
+let bright = 100;
 
 
 function askQuestion() {
@@ -58,6 +59,10 @@ function changeColor() {
     box.forEach(e => {
         e.addEventListener('mouseover', (e) => {
             e.target.style.backgroundColor = `rgb(${rgb()},${rgb()},${rgb()})`;
+            e.target.style.filter = `brightness(${bright}%)`;
+            if(bright > 0){
+                bright = bright - 10;
+            }
         })
     });
 }
@@ -65,8 +70,10 @@ function changeColor() {
 
 function clearMe() {
     box = document.querySelectorAll('.box');
+    bright = 100;
     box.forEach(e => {
         e.style.backgroundColor = '#FFFFFF';
+        e.style.filter = 'brightness(100%)';
     })
 }
 
