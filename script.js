@@ -60,7 +60,7 @@ function changeColor() {
         e.addEventListener('mouseover', (e) => {
             e.target.style.backgroundColor = `rgb(${rgb()},${rgb()},${rgb()})`;
             e.target.style.filter = `brightness(${bright}%)`;
-            if(bright > 0){
+            if (bright > 0) {
                 bright = bright - 10;
             }
         })
